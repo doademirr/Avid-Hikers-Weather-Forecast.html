@@ -31,8 +31,9 @@ h1 {
   border: none;
   font-size: 16px;
   padding: 20px;
-  width: 75%;
+  width: 70%;
   border-radius: 6px;
+  margin-right: 5px;
 }
 
 .search-button {

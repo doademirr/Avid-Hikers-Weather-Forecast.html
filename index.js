@@ -3,14 +3,14 @@ function submitCity(event) {
   let searchInput = document.querySelector(".search-input");
   let currentCity = document.querySelector(".current-city");
   currentCity.innerHTML = searchInput.value;
-  searchCityElement(searchInput.value);
+  searchCity(searchInput.value);
 }
 
 let searchCityElement = document.querySelector(".search-box");
 searchCityElement.addEventListener("submit", submitCity);
 
 function searchCity(city) {
-  let key = bd40oa3ta2b94eabedb83bb3022b94f7;
+  let key = "bd40oa3ta2b94eabedb83bb3022b94f7";
   let apiKey = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
   axios.get(apiKey).then(updateTemperature);
 }
