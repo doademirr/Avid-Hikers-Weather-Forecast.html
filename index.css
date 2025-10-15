@@ -56,7 +56,7 @@ main {
 
 .current-conditions-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .current-city {
@@ -71,7 +71,7 @@ main {
   line-height: 24px;
   position: relative;
   top: 40px;
-  right: 170px;
+  right: 120px;
 }
 
 .current-conditions-details strong {
