@@ -23,4 +23,7 @@ function updateTemperature(response) {
   currentTemperatureValue.innerHTML = Math.round(
     currentTemperatureValueRounded
   );
+  let currentCity = document.querySelector(".current-city");
+  currentCity.innerHTML = response.data.city;
 }
+searchCity("Hobart");
