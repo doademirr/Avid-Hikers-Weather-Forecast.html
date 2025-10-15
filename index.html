@@ -3,96 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
     <title>Avid Hikers Weather Forecast</title>
   </head>
   <body>
     <div class="container">
-    <header>
-      <h1>Avid Hikers Weather Forecast 🥾⛰️</h1>
-      <form action="/submit">
-        <span class="question">
-          <label for="city"></label>
+      <header>
+        <h1>Avid Hikers Weather Forecast 🥾⛰️</h1>
+        <form class="search-box">
           <input
             type="search"
             placeholder="Enter a city.."
-            id="city"
             required
+            class="search-input"
           />
-        </span>
-        <span class="question">
-          <input type="submit" value="Search" />
-        </span>
-      </form>
-    </header>
-    <main>
-        <div class="current-conditions">
-      <h2 class="current-city">Hobart</h2>
-      <p>
-        Saturday 15:32, moderate rain
-        <br />
-        Humidity: <strong> 87%</strong>, Wind: <strong>7.2km/h </strong>
-        <br />
-        </div>
-        <div class="current-temperature">
-        <span class="current-temperature-icon">☀️</span
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="current-conditions-box">
+          <h2 class="current-city">Hobart</h2>
+          <p class="current-conditions-details">
+            Saturday 15:32, moderate rain
+            <br />
+            Humidity: <strong> 87%</strong>, Wind: <strong>7.2km/h </strong>
+            <br />
+          </p>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span
             ><span class="current-temperature-value">24</span
             ><span class="current-temperature-unit">°C</span>
+          </div>
         </div>
-      </p>
-      <ul>
-        <li>
-          Sun <br />
-          🌧️
-          <br />
-          <strong> 15°C </strong>- 12°C
-        </li>
-        <li>
-          Mon <br />
-          🌧️
-          <br />
-          <strong> 16°C </strong> - 13°C
-        </li>
-        <li>
-          Tue <br />
-          🌧️
-          <br />
-          <strong> 13°C </strong>
-          - 11°C
-        </li>
-        <li>
-          Wed <br />
-          🌧️
-          <br />
-          <strong> 16°C </strong>
-          - 11°C
-        </li>
-        <li>
-          Thu <br />
-          🌧️
-          <br />
-          <strong> 14°C </strong>
-          - 12°C
-        </li>
-      </ul>
-    </main>
-    <footer>
-      Coded by
-      <a href="https://github.com/doademirr" target="_blank">Doa Fitzgerald,</a>
-      code hosted on
-      <a
-        href="https://github.com/doademirr/Avid-Hikers-Weather-Forecast.html"
-        target="_blank"
-      >
-        Github
-      </a>
-      and website hosted on
-      <a
-        href="https://avid-hikers-weather-forecast.netlify.app/"
-        target="_blank"
-      >
-        Netlify.
-      </a>
-    </footer>
+        <ul>
+          <li>
+            Sun <br />
+            🌧️
+            <br />
+            <strong> 15°C </strong>- 12°C
+          </li>
+          <li>
+            Mon <br />
+            🌧️
+            <br />
+            <strong> 16°C </strong> - 13°C
+          </li>
+          <li>
+            Tue <br />
+            🌧️
+            <br />
+            <strong> 13°C </strong>
+            - 11°C
+          </li>
+          <li>
+            Wed <br />
+            🌧️
+            <br />
+            <strong> 16°C </strong>
+            - 11°C
+          </li>
+          <li>
+            Thu <br />
+            🌧️
+            <br />
+            <strong> 14°C </strong>
+            - 12°C
+          </li>
+        </ul>
+      </main>
+      <footer>
+        Coded by
+        <a href="https://github.com/doademirr" target="_blank"
+          >Doa Fitzgerald,</a
+        >
+        code hosted on
+        <a
+          href="https://github.com/doademirr/Avid-Hikers-Weather-Forecast.html"
+          target="_blank"
+        >
+          Github
+        </a>
+        and website hosted on
+        <a
+          href="https://avid-hikers-weather-forecast.netlify.app/"
+          target="_blank"
+        >
+          Netlify.
+        </a>
+      </footer>
     </div>
   </body>
 </html>
