@@ -25,5 +25,16 @@ function updateTemperature(response) {
   );
   let currentCity = document.querySelector(".current-city");
   currentCity.innerHTML = response.data.city;
+  let currentConditionDescription = document.querySelector(
+    "#current-condition-description"
+  );
+  currentConditionDescription.innerHTML = response.data.condition.description;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${response.data.temperature.humidity}%`;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `${response.data.wind.speed}km/h`;
+  let currentDate = new Date(response.data.time * 1000);
+  currentDate.innerHTML = `${Date.getDay()} ${Date.getHours()}:${Date.getMinutes()}`;
 }
+
 searchCity("Hobart");
