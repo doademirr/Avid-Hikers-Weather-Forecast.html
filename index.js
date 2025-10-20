@@ -36,6 +36,10 @@ function updateTemperature(response) {
   let currentDate = document.querySelector("#current-date");
   let date = new Date(response.data.time * 1000);
   currentDate.innerHTML = formatDate(date);
+  let currentTemperatureIcon = document.querySelector(
+    ".current-temperature-icon"
+  );
+  currentTemperatureIcon.innerHTML = `<img src="${response.data.condition.icon_url}">`;
 }
 
 function formatDate(date) {
