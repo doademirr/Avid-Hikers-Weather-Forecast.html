@@ -57,22 +57,27 @@ main {
 
 .current-conditions-box {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.current-city-info {
+  flex: 1;
+  margin-top: 20px;
 }
 
 .current-city {
   font-size: 38px;
   font-weight: 900;
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 .current-conditions-details {
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  position: relative;
-  top: 40px;
-  right: 120px;
+  margin: 0;
 }
 
 .current-conditions-details strong {
@@ -81,9 +86,8 @@ main {
 
 .current-temperature-icon {
   position: relative;
-  top: -8px;
-  font-size: 40px;
   margin-right: 10px;
+  top: 15px;
 }
 
 .current-temperature-value {
@@ -94,7 +98,7 @@ main {
 .current-temperature-unit {
   font-size: 28px;
   position: relative;
-  top: -38px;
+  top: -45px;
 }
 
 footer {
