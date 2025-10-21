@@ -61,4 +61,26 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function showForecast() {
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forecast-daily-container">
+            <div class="forecast-day">${day}</div>
+            <div class="forecast-emoji">☀️</div>
+            <div class="forecast-range">
+              <div class="forecast-range-high"><strong>15°</strong></div>
+              <div class="forecast-range-low">9°</div>
+            </div>
+          </div>`;
+  });
+
+  let dailyForecast = document.querySelector(".weather-forecast-container");
+  dailyForecast.innerHTML = forecastHtml;
+}
+
 searchCity("Hobart");
+showForecast();
