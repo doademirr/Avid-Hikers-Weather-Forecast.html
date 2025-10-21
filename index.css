@@ -101,6 +101,40 @@ main {
   top: -45px;
 }
 
+.weather-forecast-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.forecast-day {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+
+.forecast-emoji {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forecast-range {
+  color: #ff6337;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.forecast-range-high {
+  padding: 0 10px;
+}
+
+.forecast-range-low {
+  padding: 0 10px;
+}
+
 footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
