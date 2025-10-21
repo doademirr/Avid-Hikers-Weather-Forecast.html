@@ -61,7 +61,13 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function showForecast() {
+function getForecast(city) {
+  let key = bd40oa3ta2b94eabedb83bb3022b94f7;
+  let apiKey = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
+  axios(apiKey).then(showForecast);
+}
+
+function showForecast(response) {
   let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
 
@@ -83,4 +89,5 @@ function showForecast() {
 }
 
 searchCity("Hobart");
+showForecast("Hobart");
 showForecast();
