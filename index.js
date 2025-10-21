@@ -13,6 +13,8 @@ function searchCity(city) {
   let key = "bd40oa3ta2b94eabedb83bb3022b94f7";
   let apiKey = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
   axios.get(apiKey).then(updateTemperature);
+
+  getForecast(city);
 }
 
 function updateTemperature(response) {
@@ -40,6 +42,8 @@ function updateTemperature(response) {
     ".current-temperature-icon"
   );
   currentTemperatureIcon.innerHTML = `<img src="${response.data.condition.icon_url}">`;
+
+  showForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -61,27 +65,38 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(time) {
+  let date = new Date(time * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
-  let key = bd40oa3ta2b94eabedb83bb3022b94f7;
+  let key = "bd40oa3ta2b94eabedb83bb3022b94f7";
   let apiKey = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
   axios(apiKey).then(showForecast);
 }
 
 function showForecast(response) {
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="weather-forecast-daily-container">
-            <div class="forecast-day">${day}</div>
-            <div class="forecast-emoji">☀️</div>
+  response.data.daily.forEach(function (daily, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="weather-forecast-daily-container">
+            <div class="forecast-day">${formatDay(daily.time)}</div>
+            <img src="${daily.condition.icon_url}" class="forecast-emoji">
             <div class="forecast-range">
-              <div class="forecast-range-high"><strong>15°</strong></div>
-              <div class="forecast-range-low">9°</div>
+              <div class="forecast-range-high"><strong>${Math.round(
+                daily.temperature.maximum
+              )}°</strong></div>
+              <div class="forecast-range-low">${Math.round(
+                daily.temperature.minimum
+              )}°</div>
             </div>
           </div>`;
+    }
   });
 
   let dailyForecast = document.querySelector(".weather-forecast-container");
@@ -89,5 +104,3 @@ function showForecast(response) {
 }
 
 searchCity("Hobart");
-showForecast("Hobart");
-showForecast();
